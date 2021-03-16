@@ -37,12 +37,12 @@ header{
 
 section,
 footer{
-    padding: 20px 80px;
+    padding: 20px 150px;
 }
 
 nav{
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 50% 50%;
     align-items: center;
 }
 
@@ -54,7 +54,7 @@ nav a{
 
 .navLinks{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, auto);
     place-items: center;
 }
 
@@ -62,12 +62,29 @@ nav a{
     box-shadow: 0px 4px 4px rgba(152, 146, 146, 0.25);
     border-radius: 30px;
     padding: 7px 15px;
+    transition: 0.9s;
+}
+
+.activeBtn,
+.inactiveBtn{
+    transition: 0.9s;
+}
+
+.activeBtn:hover,
+.inactiveBtn:hover{
+    background: #000;
+    transition: 0.9s;
+    color: #fff;
 }
 
 .hero{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
+}
+
+.hero2{
+    place-self: end;
 }
 
 .downloadBtn{
@@ -86,12 +103,18 @@ nav a{
 .downloadBtnContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    place-items: center;
+    grid-gap: 20px;
+    place-items: start;
 }
 
 .activeBtn{
     color: #fff;
     background: #339966;
+    place-self: end;
+}
+
+.downloadBtnContainer a{
+    font-size: 16px;
 }
 
 .features{
@@ -164,4 +187,67 @@ footer{
 
 footer a{
     margin-right: 40px;
+}
+
+@media screen and (min-width: 1400px){
+    header{
+        padding: 20px 50px;
+    }
+    
+    section,
+    footer{
+        padding: 20px 250px;
+    }
+}
+
+@media screen and (min-width: 1700px){
+    header{
+        padding: 20px 50px;
+    }
+    
+    section,
+    footer{
+        padding: 20px 350px;
+    }
+}
+
+@media screen and (max-width: 1180px){    
+    section,
+    footer{
+        padding: 20px 80px;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    nav{
+        grid-template-columns: 30% 70%;
+    }
+
+    .hero{
+        grid-template-columns: 60% 40%;
+    }
+
+    section,
+    footer{
+        padding: 20px 40px;
+    }
+
+    .howContainer{
+        grid-gap: 30px;
+    }
+}
+
+@media screen and (max-width: 960px){  
+    .downloadBtn{
+        font-size: 16px;
+        padding: 14px 17px;
+    }
+
+    .featureDescription{
+        grid-gap: 20px;
+    }
+
+    .featureDescription img{
+        width: 90%;
+    }
 }
